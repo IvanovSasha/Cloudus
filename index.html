@@ -1,12 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Cloudus</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudus</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            transition: all 0.5s ease;
+        }
+        
+        .text-container {
+            font-size: 72px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+        
+        /* Различные классы шрифтов */
+        .font1 {
+            font-family: 'Arial', sans-serif;
+        }
+        .font2 {
+            font-family: 'Times New Roman', serif;
+        }
+        .font3 {
+            font-family: 'Courier New', monospace;
+        }
+        .font4 {
+            font-family: 'Georgia', serif;
+        }
+        .font5 {
+            font-family: 'Verdana', sans-serif;
+        }
+        .font6 {
+            font-family: 'Palatino Linotype', 'Book Antiqua', serif;
+        }
+        .font7 {
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+        .font8 {
+            font-family: 'Impact', sans-serif;
+        }
+    </style>
 </head>
 <body>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/IvanovSasha/Cloudus/refs/heads/main/logo.png" alt="" width="1000" height="293" /></p>
+    <div class="text-container font1" id="cloudus-text">Cloudus</div>
+
+    <script>
+        const textElement = document.getElementById('cloudus-text');
+        const fontClasses = ['font1', 'font2', 'font3', 'font4', 'font5', 'font6', 'font7', 'font8'];
+        let currentFontIndex = 0;
+        
+        function changeFont() {
+            // Удаляем текущий класс шрифта
+            textElement.classList.remove(fontClasses[currentFontIndex]);
+            
+            // Переходим к следующему шрифту (или возвращаемся к первому)
+            currentFontIndex = (currentFontIndex + 1) % fontClasses.length;
+            
+            // Добавляем новый класс шрифта
+            textElement.classList.add(fontClasses[currentFontIndex]);
+        }
+        
+        // Меняем шрифт каждые 5 секунд
+        setInterval(changeFont, 1000);
+    </script>
 </body>
 </html>
